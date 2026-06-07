@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connectez-vous à votre espace Chic en JESUS.">
+  <meta property="og:title" content="Connexion — Chic en JESUS">
+  <title>Connexion — Chic en JESUS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+  <nav class="navbar">
+    <div class="navbar-container">
+    <a href="index.html" class="navbar-logo">
+      <img src="./pictures/CEJ Offcial logo2.png" alt="Logo Chic en JESUS" class="navbar-logo-img">
+      <span class="navbar-logo-text">CHIC EN JESUS</span>
+    </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="active">Connexion</a></li>
+        <li><a href="signup.html" class="btn-primary">Inscription</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1>Connexion</h1>
+        <div class="divider"></div>
+      </div>
+
+      <form class="auth-form" action="#" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="auth-submit">Se connecter</button>
+      </form>
+
+      <div class="auth-footer-note">
+        <p>Nouveau parmi nous ?</p>
+        <a href="signup.html">Créer un compte</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-bottom" style="margin-top:0; padding-top: 24px; padding-bottom: 24px;">
+      <p>&copy; 2026 Chic en JESUS. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
