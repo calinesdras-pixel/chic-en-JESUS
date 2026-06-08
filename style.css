@@ -645,3 +645,43 @@ footer {
     padding: 64px 16px;
   }
 }
+/* ===== RESPONSIVE ===== */
+
+/* ... Tes règles max-width: 1024px restent inchangées ... */
+
+@media (max-width: 768px) {
+  /* Réduction de la police de base pour mobile */
+  html {
+    font-size: 16px; 
+  }
+
+  /* Adaptation du logo à la navbar */
+  .navbar-logo-img {
+    height: 50px; 
+  }
+
+  /* Ajustement de la carte de verset pour ne pas écraser le texte */
+  .verse-card {
+    padding: 32px 24px;
+  }
+  .verse-card-tag {
+    left: 24px; 
+  }
+
+  /* ... Tes autres règles 768px existantes (nav-links, hamburger, etc.) ... */
+}
+
+@media (max-width: 480px) {
+  /* Réduction supplémentaire pour les très petits écrans */
+  .verse-card {
+    padding: 24px 16px;
+  }
+  .verse-card-tag {
+    left: 16px;
+  }
+  .navbar-logo-text {
+    font-size: 1.1rem; /* Réduit le texte du logo pour éviter qu'il ne passe sur 2 lignes */
+  }
+
+  /* ... Tes autres règles 480px existantes ... */
+}
