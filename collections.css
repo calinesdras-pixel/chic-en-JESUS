@@ -1,0 +1,333 @@
+/* ===== COLLECTIONS PAGE ===== */
+.navbar-logo {
+  display: flex;
+  align-items: center;   /* aligne verticalement logo + texte */
+  gap: 12px;             /* espace entre le logo et le texte */
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 110px;          /* ajuste selon ton logo */
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-logo-text {
+  font-family: 'Georgia', serif;   /* ou ta police actuelle */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #C9A84C;                  /* couleur or comme sur ton logo */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.collections-page {
+  background-color: var(--color-primary);
+  min-height: 100vh;
+}
+
+.collections-header {
+  padding: 80px 24px 64px;
+  text-align: center;
+}
+
+.collections-grid {
+  padding: 0 24px 100px;
+}
+
+.collections-grid .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.coll-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  cursor: pointer;
+  display: block;
+  transition: border-color 0.5s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.coll-card:hover {
+  border-color: rgba(201,168,76,0.5);
+}
+
+.coll-card-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.coll-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease, opacity 0.5s;
+  opacity: 0.8;
+}
+
+.coll-card:hover .coll-card-img img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.coll-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-primary) 0%, rgba(26,26,46,0.55) 55%, transparent 100%);
+  opacity: 0.9;
+  transition: opacity 0.4s;
+}
+
+.coll-card:hover .coll-card-overlay {
+  opacity: 0.78;
+}
+
+.coll-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 48px;
+  text-align: center;
+}
+
+.coll-card-ref {
+  font-family: var(--font-title);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.coll-card-name {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.coll-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+}
+
+.coll-card:hover .coll-card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coll-card-cta {
+  display: inline-block;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-family: var(--font-title);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.coll-card:hover .coll-card-cta {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+/* ===== COLLECTION DETAIL PAGE ===== */
+.collection-hero {
+  position: relative;
+  height: 65vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.collection-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(26,26,46,0.75) 100%);
+}
+
+.collection-hero-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.spiritual-section {
+  padding: 80px 24px 100px;
+}
+
+.spiritual-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.products-section {
+  padding: 80px 24px;
+  background-color: var(--color-dark);
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+.products-section .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.products-section .section-header {
+  margin-bottom: 56px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: border-color 0.5s;
+}
+
+.product-card:hover {
+  border-color: rgba(201,168,76,0.5);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  transition: background 0.4s;
+}
+
+.product-card:hover .product-card-overlay {
+  background: rgba(0,0,0,0.35);
+}
+
+.product-card-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.45s ease;
+}
+
+.product-card:hover .product-card-action {
+  transform: translateY(0);
+}
+
+/* ===== BACK LINK ===== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-title);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: color 0.3s;
+  margin-top: 64px;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .collections-grid .container {
+    grid-template-columns: 1fr;
+  }
+
+  .coll-card-body {
+    padding: 28px 24px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .spiritual-section {
+    padding: 56px 16px 64px;
+  }
+
+  .verse-card {
+    padding: 40px 24px;
+  }
+
+  .verse-card-tag {
+    left: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coll-card-desc {
+    display: none;
+  }
+}
