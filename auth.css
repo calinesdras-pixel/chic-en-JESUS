@@ -1,27 +1,5 @@
-/* ===== AUTH PAGES ===== */
-.navbar-logo {
-  display: flex;
-  align-items: center;   /* aligne verticalement logo + texte */
-  gap: 12px;             /* espace entre le logo et le texte */
-  text-decoration: none;
-}
-
-.navbar-logo-img {
-  height: 110px;          /* ajuste selon ton logo */
-  width: auto;
-  object-fit: contain;
-}
-
-.navbar-logo-text {
-  font-family: 'Georgia', serif;   /* ou ta police actuelle */
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  color: #C9A84C;                  /* couleur or comme sur ton logo */
-  text-transform: uppercase;
-  white-space: nowrap;
-}
 .auth-page {
-  background-color: var(--color-primary);
+  background-color: var(--blue-medium);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,10 +16,17 @@
 .auth-card {
   width: 100%;
   max-width: 700px;
-  background-color: var(--color-dark);
-  border: 1px solid rgba(201,168,76,0.2);
+  background-color: var(--blue-dark);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
   padding: 52px 48px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.auth-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 30px 80px rgba(201, 168, 76, 0.1);
 }
 
 .auth-card-header {
@@ -55,18 +40,18 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--text-light);
   margin-bottom: 16px;
 }
 
 .auth-card-header .divider {
   width: 40px;
   height: 1px;
-  background-color: var(--color-accent);
+  background: var(--gold-gradient);
   margin: 0 auto;
 }
 
-/* ===== FORM STYLES ===== */
+/* ===== FORM ===== */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -82,33 +67,39 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .form-group label {
   font-family: var(--font-title);
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
 }
 
 .form-group input,
 .form-group textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(201,168,76,0.3);
-  padding: 10px 0;
-  color: var(--color-text);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 12px 0;
+  color: var(--text-light);
   font-family: var(--font-body);
   font-size: 0.95rem;
   outline: none;
   width: 100%;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(201, 168, 76, 0.1);
 }
 
 .form-group textarea {
-  border: 1px solid rgba(201,168,76,0.3);
+  border: 1px solid rgba(201, 168, 76, 0.3);
   padding: 14px 16px;
   resize: vertical;
   min-height: 140px;
@@ -116,47 +107,46 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(232,217,181,0.3);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-bottom-color: var(--color-accent);
-  border-color: var(--color-accent);
+  color: rgba(232, 217, 181, 0.3);
 }
 
 .auth-submit {
   margin-top: 12px;
   width: 100%;
-  background-color: var(--color-accent);
-  color: var(--color-dark);
+  background: var(--gold-gradient);
+  color: var(--blue-dark);
   padding: 18px 24px;
   font-family: var(--font-title);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  border: 2px solid var(--color-accent);
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
 }
 
 .auth-submit:hover {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(201, 168, 76, 0.5);
+}
+
+.auth-submit:active {
+  transform: scale(0.97);
 }
 
 .auth-footer-note {
   margin-top: 28px;
   text-align: center;
   font-size: 0.85rem;
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
 .auth-footer-note a {
-  color: var(--color-accent);
+  color: var(--gold);
   font-family: var(--font-title);
   font-size: 0.65rem;
   letter-spacing: 0.15em;
@@ -168,10 +158,10 @@
 }
 
 .auth-footer-note a:hover {
-  color: var(--color-text);
+  color: var(--text-light);
 }
 
-/* ===== CONTACT PAGE ===== */
+/* ===== CONTACT ===== */
 .contact-page .auth-card {
   max-width: 600px;
 }
@@ -185,44 +175,4 @@
   .form-row {
     grid-template-columns: 1fr;
   }
-}
-/* ===== RESPONSIVE ===== */
-
-/* ... Tes règles max-width: 1024px restent inchangées ... */
-
-@media (max-width: 768px) {
-  /* Réduction de la police de base pour mobile */
-  html {
-    font-size: 16px; 
-  }
-
-  /* Adaptation du logo à la navbar */
-  .navbar-logo-img {
-    height: 50px; 
-  }
-
-  /* Ajustement de la carte de verset pour ne pas écraser le texte */
-  .verse-card {
-    padding: 32px 24px;
-  }
-  .verse-card-tag {
-    left: 24px; 
-  }
-
-  /* ... Tes autres règles 768px existantes (nav-links, hamburger, etc.) ... */
-}
-
-@media (max-width: 480px) {
-  /* Réduction supplémentaire pour les très petits écrans */
-  .verse-card {
-    padding: 24px 16px;
-  }
-  .verse-card-tag {
-    left: 16px;
-  }
-  .navbar-logo-text {
-    font-size: 1.1rem; /* Réduit le texte du logo pour éviter qu'il ne passe sur 2 lignes */
-  }
-
-  /* ... Tes autres règles 480px existantes ... */
 }
